@@ -1,5 +1,6 @@
 import * as dotenv from "dotenv";
 
+import "@shardlabs/starknet-hardhat-plugin";
 import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomiclabs/hardhat-etherscan";
 import "@typechain/hardhat";
@@ -8,7 +9,6 @@ import "@nomicfoundation/hardhat-chai-matchers";
 import "hardhat-gas-reporter";
 import "hardhat-deploy";
 import "solidity-coverage";
-import "@openzeppelin/hardhat-upgrades";
 import "@nomiclabs/hardhat-ethers";
 
 dotenv.config();
@@ -44,30 +44,9 @@ const config: HardhatUserConfig = {
     hardhat: {
       allowUnlimitedContractSize: true,
     },
-    goerli: {
-      url: process.env.GOERLI_RPC_URL || "",
-      accounts,
-      gas: 2100000,
-      gasPrice: 8000000000,
-      saveDeployments: true,
-    },
-    mainnet: {
-      url: process.env.MAINNET_RPC_URL || "",
-      accounts,
-      gas: 2100000,
-      gasPrice: 8000000000,
-      saveDeployments: true,
-    },
-    mumbai: {
-      url: process.env.MUMBAI_RPC_URL || "",
-      accounts,
-      saveDeployments: true,
-    },
-    polygon: {
-      url: process.env.POLYGON_RPC_URL || "",
-      accounts,
-      saveDeployments: true,
-    },
+    localhost: {
+      url: "http://127.0.0.1:5050"
+    }
   },
   gasReporter: {
     enabled: true,
@@ -101,6 +80,21 @@ const config: HardhatUserConfig = {
     outDir: "typechain",
     target: "ethers-v5",
   },
+  starknet: {
+    venv: "active",
+    wallets: {
+      TestWallet: {
+        accountName: "TestWallet",
+        modulePath: "starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount",
+        accountPath: "~/.starknet_accounts"
+      },
+      AnotherTestWallet: {
+        accountName: "AnotherTestWallet",
+        modulePath: "starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount",
+        accountPath: "~/.starknet_accounts"
+      }
+    }
+  }
 };
 
 export default config;

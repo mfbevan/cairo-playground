@@ -1,5 +1,6 @@
 import * as dotenv from "dotenv";
 
+import "@shardlabs/starknet-hardhat-plugin";
 import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomiclabs/hardhat-etherscan";
 import "@typechain/hardhat";
@@ -8,9 +9,7 @@ import "@nomicfoundation/hardhat-chai-matchers";
 import "hardhat-gas-reporter";
 import "hardhat-deploy";
 import "solidity-coverage";
-import "@openzeppelin/hardhat-upgrades";
 import "@nomiclabs/hardhat-ethers";
-import "@shardlabs/starknet-hardhat-plugin";
 
 dotenv.config();
 
@@ -78,6 +77,9 @@ const config: HardhatUserConfig = {
     outDir: "typechain",
     target: "ethers-v5",
   },
+  starknet: {
+    venv: "active"
+  }
 };
 
 export default config;

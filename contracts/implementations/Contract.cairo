@@ -20,6 +20,18 @@ func increase_balance{
     return ();
 }
 
+// Decreases the balance by the given amount.
+@external
+func decrease_balance{
+    syscall_ptr: felt*,
+    pedersen_ptr: HashBuiltin*,
+    range_check_ptr,
+}(amount: felt) {
+    let (res) = balance.read();
+    balance.write(res - amount);
+    return ();
+}
+
 // Returns the current balance.
 @view
 func get_balance{

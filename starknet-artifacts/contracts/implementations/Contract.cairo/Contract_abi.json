@@ -11,6 +11,17 @@
         "type": "function"
     },
     {
+        "inputs": [
+            {
+                "name": "amount",
+                "type": "felt"
+            }
+        ],
+        "name": "decrease_balance",
+        "outputs": [],
+        "type": "function"
+    },
+    {
         "inputs": [],
         "name": "get_balance",
         "outputs": [

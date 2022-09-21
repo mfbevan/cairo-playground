@@ -12,6 +12,17 @@
             "type": "function"
         },
         {
+            "inputs": [
+                {
+                    "name": "amount",
+                    "type": "felt"
+                }
+            ],
+            "name": "decrease_balance",
+            "outputs": [],
+            "type": "function"
+        },
+        {
             "inputs": [],
             "name": "get_balance",
             "outputs": [
@@ -28,11 +39,15 @@
         "CONSTRUCTOR": [],
         "EXTERNAL": [
             {
+                "offset": "0x58",
+                "selector": "0x40e16596f0efae142c7b6709044280b9da7900c79ad2289ba18cdb4a3bcb98"
+            },
+            {
                 "offset": "0x3a",
                 "selector": "0x362398bec32bc0ebb411203221a35a0301193a96f317ebe5e40be9f60d15320"
             },
             {
-                "offset": "0x5b",
+                "offset": "0x79",
                 "selector": "0x39e11d48192e4333233c7eb19d10ad67c362bb28580c604d67884c85da39695"
             }
         ],
@@ -122,11 +137,41 @@
             "0x0",
             "0x48127ffb7fff8000",
             "0x208b7fff7fff7ffe",
+            "0x480a7ffa7fff8000",
+            "0x480a7ffb7fff8000",
+            "0x480a7ffc7fff8000",
+            "0x1104800180018000",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffc7",
+            "0x48127ffc7fff8000",
+            "0x48127ffc7fff8000",
+            "0x48127ffc7fff8000",
+            "0x48287ffd80007ffc",
+            "0x1104800180018000",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffce",
+            "0x208b7fff7fff7ffe",
+            "0x482680017ffd8000",
+            "0x1",
+            "0x402a7ffd7ffc7fff",
+            "0x480280007ffb8000",
+            "0x480280017ffb8000",
+            "0x480280027ffb8000",
+            "0x480280007ffd8000",
+            "0x1104800180018000",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffee",
+            "0x40780017fff7fff",
+            "0x1",
+            "0x48127ffc7fff8000",
+            "0x48127ffc7fff8000",
+            "0x48127ffc7fff8000",
+            "0x480680017fff8000",
+            "0x0",
+            "0x48127ffb7fff8000",
+            "0x208b7fff7fff7ffe",
             "0x480a7ffb7fff8000",
             "0x480a7ffc7fff8000",
             "0x480a7ffd7fff8000",
             "0x1104800180018000",
-            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffc7",
+            "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffa9",
             "0x208b7fff7fff7ffe",
             "0x40780017fff7fff",
             "0x1",
@@ -159,6 +204,11 @@
                 "autogen/starknet/arg_processor/293368f3a0e12cfcf22314a31e13b9801e95a5b8b2b71822a2fbbdf5a01ea795.cairo": "assert [__return_value_ptr] = ret_value.res;\nlet __return_value_ptr = __return_value_ptr + 1;\n",
                 "autogen/starknet/arg_processor/73e68c490b7650388f650e9e1ff9b2b3ced88dabf86213d6a0831077eb1a0800.cairo": "let __calldata_arg_amount = [__calldata_ptr];\nlet __calldata_ptr = __calldata_ptr + 1;\n",
                 "autogen/starknet/arg_processor/c31620b02d4d706f0542c989b2aadc01b0981d1f6a5933a8fe4937ace3d70d92.cairo": "let __calldata_actual_size =  __calldata_ptr - cast([cast(fp + (-3), felt**)], felt*);\n",
+                "autogen/starknet/external/decrease_balance/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo": "let range_check_ptr = [cast([cast(fp + (-5), felt**)] + 2, felt*)];\n",
+                "autogen/starknet/external/decrease_balance/9684a85e93c782014ca14293edea4eb2502039a5a7b6538ecd39c56faaf12529.cairo": "let pedersen_ptr = [cast([cast(fp + (-5), felt**)] + 1, starkware.cairo.common.cairo_builtins.HashBuiltin**)];\n",
+                "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo": "let ret_value = __wrapped_func{syscall_ptr=syscall_ptr, pedersen_ptr=pedersen_ptr, range_check_ptr=range_check_ptr}(amount=__calldata_arg_amount,);\n%{ memory[ap] = segments.add() %}        // Allocate memory for return value.\ntempvar retdata: felt*;\nlet retdata_size = 0;\n",
+                "autogen/starknet/external/decrease_balance/b2c52ca2d2a8fc8791a983086d8716c5eacd0c3d62934914d2286f84b98ff4cb.cairo": "let syscall_ptr = [cast([cast(fp + (-5), felt**)] + 0, felt**)];\n",
+                "autogen/starknet/external/decrease_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo": "return (syscall_ptr,pedersen_ptr,range_check_ptr,retdata_size,retdata);\n",
                 "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo": "let ret_value = __wrapped_func{syscall_ptr=syscall_ptr, pedersen_ptr=pedersen_ptr, range_check_ptr=range_check_ptr}();\nlet (range_check_ptr, retdata_size, retdata) = get_balance_encode_return(ret_value, range_check_ptr);\n",
                 "autogen/starknet/external/get_balance/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo": "let range_check_ptr = [cast([cast(fp + (-5), felt**)] + 2, felt*)];\n",
                 "autogen/starknet/external/get_balance/9684a85e93c782014ca14293edea4eb2502039a5a7b6538ecd39c56faaf12529.cairo": "let pedersen_ptr = [cast([cast(fp + (-5), felt**)] + 1, starkware.cairo.common.cairo_builtins.HashBuiltin**)];\n",
@@ -2361,7 +2411,7 @@
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.get_balance"
+                        "__main__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2403,7 +2453,7 @@
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.get_balance"
+                        "__main__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2445,7 +2495,7 @@
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.get_balance"
+                        "__main__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2487,7 +2537,7 @@
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.get_balance"
+                        "__main__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2505,12 +2555,192 @@
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__main__.get_balance"
+                        "__main__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 22,
+                        "end_col": 33,
+                        "end_line": 13,
+                        "input_file": {
+                            "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 31,
+                                "end_line": 30,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 34,
+                                        "end_line": 19,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 32,
+                                                "end_line": 31,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 5,
+                                                "start_line": 31
+                                            },
+                                            "While trying to retrieve the implicit argument 'syscall_ptr' in:"
+                                        ],
+                                        "start_col": 16,
+                                        "start_line": 19
+                                    },
+                                    "While expanding the reference 'syscall_ptr' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 30
+                            },
+                            "While trying to update the implicit return value 'syscall_ptr' in:"
+                        ],
+                        "start_col": 15,
+                        "start_line": 13
+                    }
+                },
+                "82": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.decrease_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 61,
+                        "end_line": 13,
+                        "input_file": {
+                            "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 31,
+                                "end_line": 30,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 19,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 32,
+                                                "end_line": 31,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 5,
+                                                "start_line": 31
+                                            },
+                                            "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
+                                        ],
+                                        "start_col": 36,
+                                        "start_line": 19
+                                    },
+                                    "While expanding the reference 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 30
+                            },
+                            "While trying to update the implicit return value 'pedersen_ptr' in:"
+                        ],
+                        "start_col": 35,
+                        "start_line": 13
+                    }
+                },
+                "83": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.decrease_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 78,
+                        "end_line": 13,
+                        "input_file": {
+                            "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 31,
+                                "end_line": 30,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 79,
+                                        "end_line": 19,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 32,
+                                                "end_line": 31,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 5,
+                                                "start_line": 31
+                                            },
+                                            "While trying to retrieve the implicit argument 'range_check_ptr' in:"
+                                        ],
+                                        "start_col": 64,
+                                        "start_line": 19
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 17,
+                                "start_line": 30
+                            },
+                            "While trying to update the implicit return value 'range_check_ptr' in:"
+                        ],
+                        "start_col": 63,
+                        "start_line": 13
+                    }
+                },
+                "84": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.decrease_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 31,
+                        "end_line": 31,
+                        "input_file": {
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                        },
+                        "start_col": 19,
+                        "start_line": 31
+                    }
+                },
+                "85": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.decrease_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 32,
                         "end_line": 31,
                         "input_file": {
                             "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -2519,201 +2749,22 @@
                         "start_line": 31
                     }
                 },
-                "82": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__wrappers__",
-                        "__wrappers__.get_balance_encode_return"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [
-                        {
-                            "location": {
-                                "end_col": 38,
-                                "end_line": 3,
-                                "input_file": {
-                                    "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
-                                },
-                                "parent_location": [
-                                    {
-                                        "end_col": 17,
-                                        "end_line": 25,
-                                        "input_file": {
-                                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                        },
-                                        "start_col": 6,
-                                        "start_line": 25
-                                    },
-                                    "While handling return value of"
-                                ],
-                                "start_col": 5,
-                                "start_line": 3
-                            },
-                            "n_prefix_newlines": 0
-                        }
-                    ],
-                    "inst": {
-                        "end_col": 18,
-                        "end_line": 4,
-                        "input_file": {
-                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
-                        },
-                        "parent_location": [
-                            {
-                                "end_col": 17,
-                                "end_line": 25,
-                                "input_file": {
-                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                },
-                                "start_col": 6,
-                                "start_line": 25
-                            },
-                            "While handling return value of"
-                        ],
-                        "start_col": 5,
-                        "start_line": 4
-                    }
-                },
-                "84": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__wrappers__",
-                        "__wrappers__.get_balance_encode_return"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 45,
-                        "end_line": 1,
-                        "input_file": {
-                            "filename": "autogen/starknet/arg_processor/293368f3a0e12cfcf22314a31e13b9801e95a5b8b2b71822a2fbbdf5a01ea795.cairo"
-                        },
-                        "parent_location": [
-                            {
-                                "end_col": 18,
-                                "end_line": 29,
-                                "input_file": {
-                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                },
-                                "start_col": 9,
-                                "start_line": 29
-                            },
-                            "While handling return value 'res'"
-                        ],
-                        "start_col": 1,
-                        "start_line": 1
-                    }
-                },
-                "85": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__wrappers__",
-                        "__wrappers__.get_balance_encode_return"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 48,
-                        "end_line": 2,
-                        "input_file": {
-                            "filename": "autogen/starknet/arg_processor/293368f3a0e12cfcf22314a31e13b9801e95a5b8b2b71822a2fbbdf5a01ea795.cairo"
-                        },
-                        "parent_location": [
-                            {
-                                "end_col": 18,
-                                "end_line": 29,
-                                "input_file": {
-                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                },
-                                "parent_location": [
-                                    {
-                                        "end_col": 36,
-                                        "end_line": 11,
-                                        "input_file": {
-                                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
-                                        },
-                                        "parent_location": [
-                                            {
-                                                "end_col": 17,
-                                                "end_line": 25,
-                                                "input_file": {
-                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                                },
-                                                "start_col": 6,
-                                                "start_line": 25
-                                            },
-                                            "While handling return value of"
-                                        ],
-                                        "start_col": 18,
-                                        "start_line": 11
-                                    },
-                                    "While expanding the reference '__return_value_ptr' in:"
-                                ],
-                                "start_col": 9,
-                                "start_line": 29
-                            },
-                            "While handling return value 'res'"
-                        ],
-                        "start_col": 26,
-                        "start_line": 2
-                    }
-                },
                 "87": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
-                        "__wrappers__",
-                        "__wrappers__.get_balance_encode_return"
+                        "__main__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 71,
-                        "end_line": 1,
+                        "end_col": 15,
+                        "end_line": 32,
                         "input_file": {
-                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
                         },
-                        "parent_location": [
-                            {
-                                "end_col": 17,
-                                "end_line": 25,
-                                "input_file": {
-                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                },
-                                "parent_location": [
-                                    {
-                                        "end_col": 40,
-                                        "end_line": 10,
-                                        "input_file": {
-                                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
-                                        },
-                                        "parent_location": [
-                                            {
-                                                "end_col": 17,
-                                                "end_line": 25,
-                                                "input_file": {
-                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                                },
-                                                "start_col": 6,
-                                                "start_line": 25
-                                            },
-                                            "While handling return value of"
-                                        ],
-                                        "start_col": 25,
-                                        "start_line": 10
-                                    },
-                                    "While expanding the reference 'range_check_ptr' in:"
-                                ],
-                                "start_col": 6,
-                                "start_line": 25
-                            },
-                            "While handling return value of"
-                        ],
-                        "start_col": 56,
-                        "start_line": 1
+                        "start_col": 5,
+                        "start_line": 32
                     }
                 },
                 "88": {
@@ -2721,85 +2772,78 @@
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance_encode_return"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 63,
-                        "end_line": 11,
+                        "end_col": 40,
+                        "end_line": 2,
                         "input_file": {
-                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                            "filename": "autogen/starknet/arg_processor/73e68c490b7650388f650e9e1ff9b2b3ced88dabf86213d6a0831077eb1a0800.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
-                                "end_line": 25,
-                                "input_file": {
-                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                },
-                                "start_col": 6,
-                                "start_line": 25
-                            },
-                            "While handling return value of"
-                        ],
-                        "start_col": 18,
-                        "start_line": 11
-                    }
-                },
-                "89": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__wrappers__",
-                        "__wrappers__.get_balance_encode_return"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 35,
-                        "end_line": 5,
-                        "input_file": {
-                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
-                        },
-                        "parent_location": [
-                            {
-                                "end_col": 17,
-                                "end_line": 25,
+                                "end_col": 15,
+                                "end_line": 29,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 38,
-                                        "end_line": 12,
+                                        "end_col": 45,
+                                        "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                                            "filename": "autogen/starknet/arg_processor/c31620b02d4d706f0542c989b2aadc01b0981d1f6a5933a8fe4937ace3d70d92.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
                                                 },
+                                                "parent_location": [
+                                                    {
+                                                        "end_col": 57,
+                                                        "end_line": 1,
+                                                        "input_file": {
+                                                            "filename": "autogen/starknet/arg_processor/01cba52f8515996bb9d7070bde81ff39281d096d7024a558efcba6e1fd2402cf.cairo"
+                                                        },
+                                                        "parent_location": [
+                                                            {
+                                                                "end_col": 22,
+                                                                "end_line": 25,
+                                                                "input_file": {
+                                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                                },
+                                                                "start_col": 6,
+                                                                "start_line": 25
+                                                            },
+                                                            "While handling calldata of"
+                                                        ],
+                                                        "start_col": 35,
+                                                        "start_line": 1
+                                                    },
+                                                    "While expanding the reference '__calldata_actual_size' in:"
+                                                ],
                                                 "start_col": 6,
                                                 "start_line": 25
                                             },
-                                            "While handling return value of"
+                                            "While handling calldata of"
                                         ],
-                                        "start_col": 14,
-                                        "start_line": 12
+                                        "start_col": 31,
+                                        "start_line": 1
                                     },
-                                    "While expanding the reference '__return_value_ptr_start' in:"
+                                    "While expanding the reference '__calldata_ptr' in:"
                                 ],
-                                "start_col": 6,
-                                "start_line": 25
+                                "start_col": 3,
+                                "start_line": 29
                             },
-                            "While handling return value of"
+                            "While handling calldata argument 'amount'"
                         ],
-                        "start_col": 11,
-                        "start_line": 5
+                        "start_col": 22,
+                        "start_line": 2
                     }
                 },
                 "90": {
@@ -2807,38 +2851,7 @@
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance_encode_return"
-                    ],
-                    "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 40,
-                        "end_line": 12,
-                        "input_file": {
-                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
-                        },
-                        "parent_location": [
-                            {
-                                "end_col": 17,
-                                "end_line": 25,
-                                "input_file": {
-                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                },
-                                "start_col": 6,
-                                "start_line": 25
-                            },
-                            "While handling return value of"
-                        ],
-                        "start_col": 5,
-                        "start_line": 9
-                    }
-                },
-                "91": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2850,7 +2863,7 @@
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
+                                "end_col": 22,
                                 "end_line": 25,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -2864,12 +2877,12 @@
                         "start_line": 1
                     }
                 },
-                "92": {
+                "91": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2877,7 +2890,7 @@
                         "end_col": 64,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/b2c52ca2d2a8fc8791a983086d8716c5eacd0c3d62934914d2286f84b98ff4cb.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/b2c52ca2d2a8fc8791a983086d8716c5eacd0c3d62934914d2286f84b98ff4cb.cairo"
                         },
                         "parent_location": [
                             {
@@ -2891,11 +2904,11 @@
                                         "end_col": 55,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -2919,12 +2932,12 @@
                         "start_line": 1
                     }
                 },
-                "93": {
+                "92": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2932,7 +2945,7 @@
                         "end_col": 110,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/9684a85e93c782014ca14293edea4eb2502039a5a7b6538ecd39c56faaf12529.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/9684a85e93c782014ca14293edea4eb2502039a5a7b6538ecd39c56faaf12529.cairo"
                         },
                         "parent_location": [
                             {
@@ -2946,11 +2959,11 @@
                                         "end_col": 82,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -2974,12 +2987,12 @@
                         "start_line": 1
                     }
                 },
-                "94": {
+                "93": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -2987,7 +3000,7 @@
                         "end_col": 67,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo"
                         },
                         "parent_location": [
                             {
@@ -3001,11 +3014,11 @@
                                         "end_col": 115,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3029,17 +3042,72 @@
                         "start_line": 1
                     }
                 },
+                "94": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.decrease_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 45,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/73e68c490b7650388f650e9e1ff9b2b3ced88dabf86213d6a0831077eb1a0800.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 15,
+                                "end_line": 29,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 145,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 22,
+                                                "end_line": 25,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 25
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 124,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference '__calldata_arg_amount' in:"
+                                ],
+                                "start_col": 3,
+                                "start_line": 29
+                            },
+                            "While handling calldata argument 'amount'"
+                        ],
+                        "start_col": 29,
+                        "start_line": 1
+                    }
+                },
                 "95": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 17,
+                        "end_col": 22,
                         "end_line": 25,
                         "input_file": {
                             "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3053,74 +3121,44 @@
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
-                    "hints": [],
-                    "inst": {
-                        "end_col": 115,
-                        "end_line": 1,
-                        "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
-                        },
-                        "parent_location": [
-                            {
-                                "end_col": 17,
-                                "end_line": 25,
+                    "hints": [
+                        {
+                            "location": {
+                                "end_col": 34,
+                                "end_line": 2,
                                 "input_file": {
-                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                    "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                                 },
                                 "parent_location": [
                                     {
-                                        "end_col": 100,
-                                        "end_line": 2,
+                                        "end_col": 22,
+                                        "end_line": 25,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
                                         },
-                                        "parent_location": [
-                                            {
-                                                "end_col": 17,
-                                                "end_line": 25,
-                                                "input_file": {
-                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
-                                                },
-                                                "start_col": 6,
-                                                "start_line": 25
-                                            },
-                                            "While constructing the external wrapper for:"
-                                        ],
-                                        "start_col": 85,
-                                        "start_line": 2
+                                        "start_col": 6,
+                                        "start_line": 25
                                     },
-                                    "While expanding the reference 'range_check_ptr' in:"
+                                    "While constructing the external wrapper for:"
                                 ],
-                                "start_col": 6,
-                                "start_line": 25
+                                "start_col": 1,
+                                "start_line": 2
                             },
-                            "While constructing the external wrapper for:"
-                        ],
-                        "start_col": 100,
-                        "start_line": 1
-                    }
-                },
-                "98": {
-                    "accessible_scopes": [
-                        "__main__",
-                        "__main__",
-                        "__wrappers__",
-                        "__wrappers__.get_balance"
+                            "n_prefix_newlines": 0
+                        }
                     ],
-                    "flow_tracking_data": null,
-                    "hints": [],
                     "inst": {
-                        "end_col": 101,
-                        "end_line": 2,
+                        "end_col": 24,
+                        "end_line": 3,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
+                                "end_col": 22,
                                 "end_line": 25,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3130,16 +3168,16 @@
                             },
                             "While constructing the external wrapper for:"
                         ],
-                        "start_col": 48,
-                        "start_line": 2
+                        "start_col": 1,
+                        "start_line": 3
                     }
                 },
-                "100": {
+                "99": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3147,11 +3185,11 @@
                         "end_col": 55,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
+                                "end_col": 22,
                                 "end_line": 25,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3161,11 +3199,11 @@
                                         "end_col": 20,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3189,12 +3227,12 @@
                         "start_line": 1
                     }
                 },
-                "101": {
+                "100": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
@@ -3202,11 +3240,11 @@
                         "end_col": 82,
                         "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
+                                "end_col": 22,
                                 "end_line": 25,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3216,11 +3254,11 @@
                                         "end_col": 33,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3244,24 +3282,24 @@
                         "start_line": 1
                     }
                 },
-                "102": {
+                "101": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 21,
-                        "end_line": 2,
+                        "end_col": 115,
+                        "end_line": 1,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
+                                "end_col": 22,
                                 "end_line": 25,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3271,11 +3309,11 @@
                                         "end_col": 49,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3295,28 +3333,28 @@
                             },
                             "While constructing the external wrapper for:"
                         ],
-                        "start_col": 6,
-                        "start_line": 2
+                        "start_col": 100,
+                        "start_line": 1
                     }
                 },
-                "103": {
+                "102": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 35,
-                        "end_line": 2,
+                        "end_col": 21,
+                        "end_line": 4,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
+                                "end_col": 22,
                                 "end_line": 25,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3326,11 +3364,11 @@
                                         "end_col": 62,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3350,8 +3388,8 @@
                             },
                             "While constructing the external wrapper for:"
                         ],
-                        "start_col": 23,
-                        "start_line": 2
+                        "start_col": 20,
+                        "start_line": 4
                     }
                 },
                 "104": {
@@ -3359,19 +3397,19 @@
                         "__main__",
                         "__main__",
                         "__wrappers__",
-                        "__wrappers__.get_balance"
+                        "__wrappers__.decrease_balance"
                     ],
                     "flow_tracking_data": null,
                     "hints": [],
                     "inst": {
-                        "end_col": 44,
-                        "end_line": 2,
+                        "end_col": 16,
+                        "end_line": 3,
                         "input_file": {
-                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                            "filename": "autogen/starknet/external/decrease_balance/a41d25a92a3a14a71125d51d48dd7398e2839f055f01551b7b1950eafc1187c0.cairo"
                         },
                         "parent_location": [
                             {
-                                "end_col": 17,
+                                "end_col": 22,
                                 "end_line": 25,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3381,11 +3419,11 @@
                                         "end_col": 70,
                                         "end_line": 1,
                                         "input_file": {
-                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                            "filename": "autogen/starknet/external/decrease_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
                                         },
                                         "parent_location": [
                                             {
-                                                "end_col": 17,
+                                                "end_col": 22,
                                                 "end_line": 25,
                                                 "input_file": {
                                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
@@ -3405,11 +3443,1094 @@
                             },
                             "While constructing the external wrapper for:"
                         ],
+                        "start_col": 9,
+                        "start_line": 3
+                    }
+                },
+                "105": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.decrease_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 72,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/decrease_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 22,
+                                "end_line": 25,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 25
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 1,
+                        "start_line": 1
+                    }
+                },
+                "106": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 23,
+                        "end_line": 38,
+                        "input_file": {
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 33,
+                                "end_line": 13,
+                                "input_file": {
+                                    "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 31,
+                                        "end_line": 42,
+                                        "input_file": {
+                                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                        },
+                                        "start_col": 17,
+                                        "start_line": 42
+                                    },
+                                    "While trying to retrieve the implicit argument 'syscall_ptr' in:"
+                                ],
+                                "start_col": 15,
+                                "start_line": 13
+                            },
+                            "While expanding the reference 'syscall_ptr' in:"
+                        ],
+                        "start_col": 5,
+                        "start_line": 38
+                    }
+                },
+                "107": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 31,
+                        "end_line": 39,
+                        "input_file": {
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 61,
+                                "end_line": 13,
+                                "input_file": {
+                                    "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 31,
+                                        "end_line": 42,
+                                        "input_file": {
+                                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                        },
+                                        "start_col": 17,
+                                        "start_line": 42
+                                    },
+                                    "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 35,
+                                "start_line": 13
+                            },
+                            "While expanding the reference 'pedersen_ptr' in:"
+                        ],
+                        "start_col": 5,
+                        "start_line": 39
+                    }
+                },
+                "108": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 20,
+                        "end_line": 40,
+                        "input_file": {
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 78,
+                                "end_line": 13,
+                                "input_file": {
+                                    "filename": "autogen/starknet/storage_var/balance/decl.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 31,
+                                        "end_line": 42,
+                                        "input_file": {
+                                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                        },
+                                        "start_col": 17,
+                                        "start_line": 42
+                                    },
+                                    "While trying to retrieve the implicit argument 'range_check_ptr' in:"
+                                ],
+                                "start_col": 63,
+                                "start_line": 13
+                            },
+                            "While expanding the reference 'range_check_ptr' in:"
+                        ],
+                        "start_col": 5,
+                        "start_line": 40
+                    }
+                },
+                "109": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 31,
+                        "end_line": 42,
+                        "input_file": {
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                        },
+                        "start_col": 17,
+                        "start_line": 42
+                    }
+                },
+                "111": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__main__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 22,
+                        "end_line": 43,
+                        "input_file": {
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                        },
+                        "start_col": 5,
+                        "start_line": 43
+                    }
+                },
+                "112": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [
+                        {
+                            "location": {
+                                "end_col": 38,
+                                "end_line": 3,
+                                "input_file": {
+                                    "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 17,
+                                        "end_line": 37,
+                                        "input_file": {
+                                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                        },
+                                        "start_col": 6,
+                                        "start_line": 37
+                                    },
+                                    "While handling return value of"
+                                ],
+                                "start_col": 5,
+                                "start_line": 3
+                            },
+                            "n_prefix_newlines": 0
+                        }
+                    ],
+                    "inst": {
+                        "end_col": 18,
+                        "end_line": 4,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 5,
+                        "start_line": 4
+                    }
+                },
+                "114": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 45,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/293368f3a0e12cfcf22314a31e13b9801e95a5b8b2b71822a2fbbdf5a01ea795.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 18,
+                                "end_line": 41,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "start_col": 9,
+                                "start_line": 41
+                            },
+                            "While handling return value 'res'"
+                        ],
+                        "start_col": 1,
+                        "start_line": 1
+                    }
+                },
+                "115": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 48,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/293368f3a0e12cfcf22314a31e13b9801e95a5b8b2b71822a2fbbdf5a01ea795.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 18,
+                                "end_line": 41,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 36,
+                                        "end_line": 11,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While handling return value of"
+                                        ],
+                                        "start_col": 18,
+                                        "start_line": 11
+                                    },
+                                    "While expanding the reference '__return_value_ptr' in:"
+                                ],
+                                "start_col": 9,
+                                "start_line": 41
+                            },
+                            "While handling return value 'res'"
+                        ],
+                        "start_col": 26,
+                        "start_line": 2
+                    }
+                },
+                "117": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 71,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 40,
+                                        "end_line": 10,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While handling return value of"
+                                        ],
+                                        "start_col": 25,
+                                        "start_line": 10
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 56,
+                        "start_line": 1
+                    }
+                },
+                "118": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 63,
+                        "end_line": 11,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 18,
+                        "start_line": 11
+                    }
+                },
+                "119": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 35,
+                        "end_line": 5,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 38,
+                                        "end_line": 12,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While handling return value of"
+                                        ],
+                                        "start_col": 14,
+                                        "start_line": 12
+                                    },
+                                    "While expanding the reference '__return_value_ptr_start' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 11,
+                        "start_line": 5
+                    }
+                },
+                "120": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance_encode_return"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 40,
+                        "end_line": 12,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/return/get_balance/9ef0a2b9ad0a2e2b202322d7261fff6dada72892e286df2230a9eb8873880a98.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While handling return value of"
+                        ],
+                        "start_col": 5,
+                        "start_line": 9
+                    }
+                },
+                "121": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 58,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/arg_processor/01cba52f8515996bb9d7070bde81ff39281d096d7024a558efcba6e1fd2402cf.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While handling calldata of"
+                        ],
+                        "start_col": 1,
+                        "start_line": 1
+                    }
+                },
+                "122": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 64,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/b2c52ca2d2a8fc8791a983086d8716c5eacd0c3d62934914d2286f84b98ff4cb.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 23,
+                                "end_line": 38,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 55,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 44,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'syscall_ptr' in:"
+                                ],
+                                "start_col": 5,
+                                "start_line": 38
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 19,
+                        "start_line": 1
+                    }
+                },
+                "123": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 110,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/9684a85e93c782014ca14293edea4eb2502039a5a7b6538ecd39c56faaf12529.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 31,
+                                "end_line": 39,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 82,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 70,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 5,
+                                "start_line": 39
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 20,
+                        "start_line": 1
+                    }
+                },
+                "124": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 67,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/741ea357d6336b0bed7bf0472425acd0311d543883b803388880e60a232040c7.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 20,
+                                "end_line": 40,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 115,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 100,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 5,
+                                "start_line": 40
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 23,
+                        "start_line": 1
+                    }
+                },
+                "125": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 17,
+                        "end_line": 37,
+                        "input_file": {
+                            "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                        },
+                        "start_col": 6,
+                        "start_line": 37
+                    }
+                },
+                "127": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 115,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 100,
+                                        "end_line": 2,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 85,
+                                        "start_line": 2
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 100,
+                        "start_line": 1
+                    }
+                },
+                "128": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 101,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 48,
+                        "start_line": 2
+                    }
+                },
+                "130": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 55,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 20,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 9,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'syscall_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 44,
+                        "start_line": 1
+                    }
+                },
+                "131": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 82,
+                        "end_line": 1,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 33,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 21,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'pedersen_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 70,
+                        "start_line": 1
+                    }
+                },
+                "132": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 21,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 49,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 34,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'range_check_ptr' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 6,
+                        "start_line": 2
+                    }
+                },
+                "133": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 35,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 62,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 50,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'retdata_size' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
+                        "start_col": 23,
+                        "start_line": 2
+                    }
+                },
+                "134": {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.get_balance"
+                    ],
+                    "flow_tracking_data": null,
+                    "hints": [],
+                    "inst": {
+                        "end_col": 44,
+                        "end_line": 2,
+                        "input_file": {
+                            "filename": "autogen/starknet/external/get_balance/2c767dabe8478bfafd38f9fb907f9842d03e3c9d2b355e2af5c59b126fcc8f59.cairo"
+                        },
+                        "parent_location": [
+                            {
+                                "end_col": 17,
+                                "end_line": 37,
+                                "input_file": {
+                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                },
+                                "parent_location": [
+                                    {
+                                        "end_col": 70,
+                                        "end_line": 1,
+                                        "input_file": {
+                                            "filename": "autogen/starknet/external/get_balance/da17921a4e81c09e730800bbf23bfdbe5e9e6bfaedc59d80fbf62087fa43c27d.cairo"
+                                        },
+                                        "parent_location": [
+                                            {
+                                                "end_col": 17,
+                                                "end_line": 37,
+                                                "input_file": {
+                                                    "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
+                                                },
+                                                "start_col": 6,
+                                                "start_line": 37
+                                            },
+                                            "While constructing the external wrapper for:"
+                                        ],
+                                        "start_col": 63,
+                                        "start_line": 1
+                                    },
+                                    "While expanding the reference 'retdata' in:"
+                                ],
+                                "start_col": 6,
+                                "start_line": 37
+                            },
+                            "While constructing the external wrapper for:"
+                        ],
                         "start_col": 37,
                         "start_line": 2
                     }
                 },
-                "105": {
+                "135": {
                     "accessible_scopes": [
                         "__main__",
                         "__main__",
@@ -3427,12 +4548,12 @@
                         "parent_location": [
                             {
                                 "end_col": 17,
-                                "end_line": 25,
+                                "end_line": 37,
                                 "input_file": {
                                     "filename": "/Users/matthew/repos/GitHub/cairo-playground/contracts/implementations/Contract.cairo"
                                 },
                                 "start_col": 6,
-                                "start_line": 25
+                                "start_line": 37
                             },
                             "While constructing the external wrapper for:"
                         ],
@@ -3497,7 +4618,25 @@
                     }
                 }
             ],
-            "82": [
+            "97": [
+                {
+                    "accessible_scopes": [
+                        "__main__",
+                        "__main__",
+                        "__wrappers__",
+                        "__wrappers__.decrease_balance"
+                    ],
+                    "code": "memory[ap] = segments.add()",
+                    "flow_tracking_data": {
+                        "ap_tracking": {
+                            "group": 8,
+                            "offset": 52
+                        },
+                        "reference_ids": {}
+                    }
+                }
+            ],
+            "112": [
                 {
                     "accessible_scopes": [
                         "__main__",
@@ -3508,7 +4647,7 @@
                     "code": "memory[ap] = segments.add()",
                     "flow_tracking_data": {
                         "ap_tracking": {
-                            "group": 8,
+                            "group": 10,
                             "offset": 0
                         },
                         "reference_ids": {}
@@ -3679,11 +4818,56 @@
                 "type": "const",
                 "value": 0
             },
+            "__main__.decrease_balance": {
+                "decorators": [
+                    "external"
+                ],
+                "pc": 76,
+                "type": "function"
+            },
+            "__main__.decrease_balance.Args": {
+                "full_name": "__main__.decrease_balance.Args",
+                "members": {
+                    "amount": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    }
+                },
+                "size": 1,
+                "type": "struct"
+            },
+            "__main__.decrease_balance.ImplicitArgs": {
+                "full_name": "__main__.decrease_balance.ImplicitArgs",
+                "members": {
+                    "pedersen_ptr": {
+                        "cairo_type": "starkware.cairo.common.cairo_builtins.HashBuiltin*",
+                        "offset": 1
+                    },
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 2
+                    },
+                    "syscall_ptr": {
+                        "cairo_type": "felt*",
+                        "offset": 0
+                    }
+                },
+                "size": 3,
+                "type": "struct"
+            },
+            "__main__.decrease_balance.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "__main__.decrease_balance.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
             "__main__.get_balance": {
                 "decorators": [
                     "view"
                 ],
-                "pc": 76,
+                "pc": 106,
                 "type": "function"
             },
             "__main__.get_balance.Args": {
@@ -3764,11 +4948,46 @@
                 "type": "const",
                 "value": 0
             },
+            "__wrappers__.decrease_balance": {
+                "decorators": [
+                    "external"
+                ],
+                "pc": 88,
+                "type": "function"
+            },
+            "__wrappers__.decrease_balance.Args": {
+                "full_name": "__wrappers__.decrease_balance.Args",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__wrappers__.decrease_balance.ImplicitArgs": {
+                "full_name": "__wrappers__.decrease_balance.ImplicitArgs",
+                "members": {},
+                "size": 0,
+                "type": "struct"
+            },
+            "__wrappers__.decrease_balance.Return": {
+                "cairo_type": "(syscall_ptr: felt*, pedersen_ptr: starkware.cairo.common.cairo_builtins.HashBuiltin*, range_check_ptr: felt, size: felt, retdata: felt*)",
+                "type": "type_definition"
+            },
+            "__wrappers__.decrease_balance.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "__wrappers__.decrease_balance.__wrapped_func": {
+                "destination": "__main__.decrease_balance",
+                "type": "alias"
+            },
+            "__wrappers__.decrease_balance_encode_return.memcpy": {
+                "destination": "starkware.cairo.common.memcpy.memcpy",
+                "type": "alias"
+            },
             "__wrappers__.get_balance": {
                 "decorators": [
                     "view"
                 ],
-                "pc": 91,
+                "pc": 121,
                 "type": "function"
             },
             "__wrappers__.get_balance.Args": {
@@ -3797,7 +5016,7 @@
             },
             "__wrappers__.get_balance_encode_return": {
                 "decorators": [],
-                "pc": 82,
+                "pc": 112,
                 "type": "function"
             },
             "__wrappers__.get_balance_encode_return.Args": {

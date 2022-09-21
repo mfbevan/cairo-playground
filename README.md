@@ -21,11 +21,11 @@ Run the `starknet-devnet` found [here](https://github.com/Shard-Labs/starknet-de
 [Docker Image](https://hub.docker.com/r/shardlabs/starknet-devnet)
 
 ```bash
-docker pull shardlabs/starknet-devnet
+docker pull shardlabs/starknet-devnet:latest-arm
 ```
 
 ```bash
-docker run -p 127.0.0.1:5050:5050 shardlabs/starknet-devnet
+docker run -p 127.0.0.1:5050:5050 shardlabs/starknet-devnet:latest-arm
 ```
 
 Check if the network is running locally using

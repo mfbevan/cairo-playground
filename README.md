@@ -1,4 +1,6 @@
-# Cairo Playground
+# Starknet/Cairo Playground
+
+Hardhat playground for developing Starknet contracts in Cairo
 
 ## Setup
 

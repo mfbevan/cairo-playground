@@ -10,6 +10,7 @@ import "hardhat-deploy";
 import "solidity-coverage";
 import "@openzeppelin/hardhat-upgrades";
 import "@nomiclabs/hardhat-ethers";
+import "@shardlabs/starknet-hardhat-plugin";
 
 dotenv.config();
 
@@ -43,30 +44,6 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       allowUnlimitedContractSize: true,
-    },
-    goerli: {
-      url: process.env.GOERLI_RPC_URL || "",
-      accounts,
-      gas: 2100000,
-      gasPrice: 8000000000,
-      saveDeployments: true,
-    },
-    mainnet: {
-      url: process.env.MAINNET_RPC_URL || "",
-      accounts,
-      gas: 2100000,
-      gasPrice: 8000000000,
-      saveDeployments: true,
-    },
-    mumbai: {
-      url: process.env.MUMBAI_RPC_URL || "",
-      accounts,
-      saveDeployments: true,
-    },
-    polygon: {
-      url: process.env.POLYGON_RPC_URL || "",
-      accounts,
-      saveDeployments: true,
     },
   },
   gasReporter: {

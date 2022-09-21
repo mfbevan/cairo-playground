@@ -11,9 +11,14 @@
         "clean": "npx hardhat clean",
         "test": "npx hardhat test --show-stack-traces",
         "compile": "npx hardhat starknet-compile",
-        "deploy": "npx hardhat starknet-deploy",
-        "verify": "npx hardhat starknet-verify"
-    },
+        "deploy:localhost": "npx hardhat starknet-deploy --starknet-network localhost",
+        "deploy:goerli": "npx hardhat starknet-deploy --starknet-network alpha-goerli",
+        "deploy:starknet": "npx hardhat starknet-deploy",
+        "deploy:account:localhost": "npx hardhat starknet-deploy-account --starknet-network localhost --wallet",
+        "verify": "npx hardhat starknet-verify",
+        "declare:goerli": "starknet declare --network=alpha-goerli --contract",
+        "declare:starknet": "starknet declare --contract"
+},
     "files": [
         "dist/src/",
         "src/",

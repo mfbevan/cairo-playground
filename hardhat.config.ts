@@ -44,6 +44,9 @@ const config: HardhatUserConfig = {
     hardhat: {
       allowUnlimitedContractSize: true,
     },
+    localhost: {
+      url: "http://127.0.0.1:5050"
+    }
   },
   gasReporter: {
     enabled: true,
@@ -78,7 +81,19 @@ const config: HardhatUserConfig = {
     target: "ethers-v5",
   },
   starknet: {
-    venv: "active"
+    venv: "active",
+    wallets: {
+      TestWallet: {
+        accountName: "TestWallet",
+        modulePath: "starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount",
+        accountPath: "~/.starknet_accounts"
+      },
+      AnotherTestWallet: {
+        accountName: "AnotherTestWallet",
+        modulePath: "starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount",
+        accountPath: "~/.starknet_accounts"
+      }
+    }
   }
 };
 

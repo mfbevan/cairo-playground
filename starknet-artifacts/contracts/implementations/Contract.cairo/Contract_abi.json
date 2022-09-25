@@ -2,6 +2,29 @@
     {
         "inputs": [
             {
+                "name": "owner_address",
+                "type": "felt"
+            }
+        ],
+        "name": "constructor",
+        "outputs": [],
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "get_owner",
+        "outputs": [
+            {
+                "name": "address",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "name": "amount",
                 "type": "felt"
             }
@@ -30,6 +53,13 @@
                 "type": "felt"
             }
         ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "check_owner",
+        "outputs": [],
         "stateMutability": "view",
         "type": "function"
     }
